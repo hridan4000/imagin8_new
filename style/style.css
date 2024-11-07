@@ -1,0 +1,1269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+/*header section*/
+.header {
+  width: 100%;
+  display: flex;
+  height: auto;
+  background-color: black;
+}
+
+.header .logo {
+  margin-left: 5rem;
+}
+
+.header .logo img {
+  height: 8vh;
+  width: 85%;
+  margin-top: 0.6rem;
+}
+
+.header .menue {
+  width: 75%;
+}
+
+.header .menue ul {
+  display: flex;
+  position: relative;
+  right: 10%;
+  justify-content: flex-end; /* Use flex-end to align items to the right */
+}
+
+#hamburger {
+  display: none;
+}
+.slider {
+  display: none;
+}
+.header .menue ul li {
+  list-style-type: none;
+  line-height: 85px;
+  font-size: 20px;
+  color: aliceblue;
+  position: relative;
+  left: 10%;
+  cursor: pointer;
+  margin-right: 2rem;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.header .menue ul li:hover {
+  color: #fb8500;
+}
+
+.header .menue ul li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0.2rem;
+  background-color: #fb8500;
+  position: relative;
+  bottom: 0;
+  margin-top: -1rem;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.header .menue ul li:hover::after {
+  width: 4rem;
+  margin: -1rem auto;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .header {
+    height: 12vh;
+  }
+  .header .logo {
+    margin-left: 2rem;
+  }
+
+  .header .logo img {
+    height: 5vh;
+    width: 100%;
+  }
+
+  .menue {
+    display: none;
+  }
+
+  #hamburger {
+    display: block; /* Show hamburger on tablet screens */
+    color: white;
+    font-size: 3.5rem;
+    position: relative;
+    left: 70%; /* Adjust based on layout */
+    top: 2px; /* Add a consistent margin */
+  }
+
+  .slider {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    justify-content: center;
+    position: relative;
+    transform: translateX(100%); /* Initially off the screen */
+    transition: transform 0.3s ease; /* Smooth transition */
+    top: 11%;
+  }
+  .slider.active {
+    transform: translateX(0); /* Slides it back onto the screen */
+  }
+
+  .slider ul {
+    background-color: #404040;
+    width: 100%;
+    position: relative;
+    top: 7.5%;
+    right: 5%;
+    text-align: center;
+    height: 90vh;
+  }
+  .slider ul li {
+    text-decoration: none;
+    margin-top: 6.8rem;
+    list-style-type: none;
+  }
+
+  .slider #cross {
+    display: flex;
+    font-size: 4.5rem;
+    position: relative;
+    left: 85%;
+  }
+}
+
+@media only screen and (min-device-width: 820px) and (max-device-width: 1180px) {
+  .header {
+    height: 12vh;
+    width: 100%;
+  }
+  .header .logo {
+    position: relative;
+    top: 8%;
+  }
+
+  .header .logo img {
+    height: 5vh;
+    margin-left: 1.3rem;
+    width: 100%;
+  }
+
+  #hamburger {
+    position: relative;
+    top: 10%;
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (min-device-width: 820px) and (max-device-width: 1180px) {
+  #hamburger {
+    position: relative;
+    top: 8%;
+    margin-right: 3.6rem;
+    font-size: 4.5rem;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1336px) {
+  #hamburger {
+    position: relative;
+    top: 10%;
+    font-size: 5rem;
+  }
+}
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
+  .header {
+    height: 10vh;
+  }
+
+  .header .logo img {
+    height: 4vh;
+    width: 104%;
+    position: relative;
+    right: 100%;
+    margin-top: 1.2rem;
+  }
+  .header .menue ul li {
+    list-style-type: none;
+    line-height: 85px;
+    font-size: 13px;
+    color: aliceblue;
+    position: relative;
+    left: 14%;
+    margin-top: -0.5rem;
+    cursor: pointer;
+    margin-right: 2rem;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    height: 8vh;
+  }
+  .header .logo {
+    margin-left: 2rem;
+  }
+
+  .header .logo img {
+    height: 5vh;
+    width: 100%;
+  }
+
+  .menue {
+    display: none;
+  }
+
+  #hamburger {
+    display: block; /* Show hamburger on tablet screens */
+    color: white;
+    font-size: 1.5rem;
+    position: relative;
+    left: 60%; /* Adjust based on layout */
+    top: 17px; /* Add a consistent margin */
+  }
+
+  .slider {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    justify-content: center;
+    position: relative;
+    transform: translateX(100%); /* Initially off the screen */
+    transition: transform 0.3s ease; /* Smooth transition */
+    top: 8%;
+  }
+  .slider.active {
+    transform: translateX(0); /* Slides it back onto the screen */
+  }
+
+  .slider ul {
+    background-color: #404040;
+    width: 100%;
+    position: relative;
+    top: 7.5%;
+    right: 4%;
+    text-align: center;
+    height: 90vh;
+  }
+  .slider ul li {
+    text-decoration: none;
+    margin-top: 4.8rem;
+    list-style-type: none;
+    margin-right: 1.6rem;
+  }
+
+  .slider #cross {
+    display: flex;
+    font-size: 1.5rem;
+    margin-top: 0.8rem;
+    position: relative;
+    left: 85%;
+  }
+}
+
+/*hero section*/
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-color: #edeef2;
+  box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero .hero-text h3 {
+  position: relative;
+  left: 40%;
+  top: 16%;
+  font-size: 100px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+}
+
+.hero .hero-text .texting {
+  margin-top: -16.5rem;
+  width: 100%;
+  height: 80vh;
+}
+.hero .tab-img {
+  margin-top: 4rem;
+  margin-left: 10rem;
+  width: 19%;
+  display: none;
+}
+
+.hero .hero-text h2 {
+  position: relative;
+  left: 40%;
+  font-size: 30px;
+  z-index: 0;
+  top: 20%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900; /* Use Poppins for an even bolder look */
+  font-style: normal;
+}
+
+.shape2 {
+  height: 22vh;
+  width: 78%;
+  position: relative;
+  right: 10%;
+  z-index: -1;
+  margin-top: 6rem;
+}
+
+.hero .hero-text p {
+  position: relative;
+  left: 40%;
+  top: 38%;
+  font-size: 19px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero .hero-text button {
+  position: relative;
+  left: 40%;
+  width: 25%;
+  border-radius: 10px;
+  background-color: #fb8500;
+  border: none;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 500;
+  font-style: normal;
+  height: 8%;
+  top: 40%;
+}
+
+.hero .hero-img {
+  margin-top: 5.3rem;
+  margin-left: 18rem;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .hero .hero-text .texting {
+    margin-top: -24.5rem;
+    width: 96%;
+    margin-left: 0.5rem;
+    height: 80vh;
+  }
+  .hero .hero-text h3 {
+    font-size: 72px;
+    left: 20%;
+    margin-top: -6.6rem;
+  }
+  .shape2 {
+    height: 22vh;
+    width: 78%;
+    position: relative;
+    right: 30%;
+    z-index: 0;
+    top: -1.2rem;
+  }
+
+  .hero .hero-text h2 {
+    font-size: 28px;
+    left: 20%;
+    z-index: 1;
+    position: relative;
+  }
+
+  .hero .hero-text p {
+    font-size: 22px;
+    text-align: center;
+    width: 85%;
+    left: 8%;
+  }
+
+  .hero .hero-text button {
+    width: 30%;
+    height: 7%;
+    left: 34%;
+    margin-top: 0.8rem;
+    font-size: 19px;
+  }
+
+  .hero .hero-img {
+    margin-top: 4rem;
+    margin-left: 10rem;
+    width: 20%;
+    display: none;
+  }
+  .hero .tab-img {
+    margin-top: 4rem;
+    margin-left: 10rem;
+    display: block;
+    height: 42vh;
+    width: 49%;
+    margin-top: -2.1rem;
+  }
+}
+/*ipad  air*/
+
+@media only screen and (min-device-width: 820px) and (max-device-width: 1180px) {
+  .hero .tab-img {
+    margin: 0 auto;
+    display: block;
+    height: 42vh;
+    width: 49%;
+    margin-top: -2.1rem;
+  }
+
+  .hero .hero-text h3 {
+    left: 25%;
+  }
+
+  .shape2 {
+    height: 22vh;
+    width: 78%;
+    position: relative;
+    right: 25%;
+    top: -4%;
+    z-index: 0;
+  }
+
+  .hero .hero-text h2 {
+    left: 25%;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+
+  .hero .hero-text p {
+    font-size: 24px;
+    text-align: center;
+    width: 93%;
+    left: 2.5%;
+    margin-bottom: 3rem;
+    margin-top: -0.3rem;
+  }
+
+  .hero .hero-text .texting {
+    margin-top: -30.5rem;
+    width: 100%;
+  }
+  .hero .hero-text button {
+    width: 30%;
+    height: 7%;
+    left: 34%;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    margin-top: 2rem;
+  }
+  .hero .hero-text .texting {
+    margin-top: -20.5rem;
+    width: 96%;
+    margin-left: 0.5rem;
+    height: 80vh;
+  }
+  .hero .hero-text h3 {
+    font-size: 42px;
+    left: 15%;
+    margin-top: -2.6rem;
+  }
+  .shape2 {
+    right: 67%;
+    z-index: 0;
+    height: 13vh;
+    width: 78%;
+    position: relative;
+    top: 1rem;
+  }
+
+  .hero .hero-text h2 {
+    font-size: 18px;
+    left: 15%;
+    z-index: 1;
+    margin-top: -1.1rem;
+  }
+  .hero .hero-text .up-paragraph {
+    margin-top: 6rem;
+  }
+  .hero .hero-text p {
+    font-size: 12px;
+    text-align: center;
+    width: 85%;
+    left: 8%;
+    margin-top: -0.7rem;
+  }
+
+  .hero .hero-text button {
+    width: 30%;
+    height: 7%;
+    left: 34%;
+    margin-top: 0.5rem;
+    font-size: 12px;
+  }
+
+  .hero .hero-img {
+    margin-top: 1rem;
+    margin-left: 10rem;
+    width: 100%;
+    display: none;
+  }
+  .hero .tab-img {
+    margin-top: 4rem;
+    margin-left: 5rem;
+    display: block;
+    height: 35 vh;
+    width: 60%;
+    margin-top: -2.1rem;
+  }
+}
+/*ipad  air*/
+
+/* iPad Pro (11-inch) & Surface Pro 7 */
+
+/* surface duo*/
+
+/*end of hero section*/
+
+/*About me section*/
+
+.about-me {
+  margin-top: 3rem;
+  width: 100%;
+  height: 78vh;
+  box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-me .about-section .about-img img {
+  width: 55%;
+  height: 58vh;
+  position: relative;
+  left: 18%;
+  top: 15%;
+  box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-me .about-text .box {
+  position: relative;
+  top: 19%;
+  width: 60%;
+}
+
+.about-me .about-text .box h4 {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  margin-top: 1rem;
+}
+.about-me .about-text .box h2 {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 37px;
+  margin-top: 2rem;
+}
+.about-me .about-text .box p {
+  margin-top: 2rem;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.about-me .about-text button {
+  width: 50%;
+  height: 6vh;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #fb8500;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .about-me {
+    margin-top: 3rem;
+    width: 100%;
+    height: 90vh;
+    box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-me .about-section .about-img img {
+    width: 60%;
+    height: 50vh;
+    position: relative;
+    left: 18%;
+    top: 15%;
+    box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  .about-section .about-text {
+    position: relative;
+    left: 18%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-me {
+    margin-top: -3rem;
+    width: 100%;
+    height: 90vh;
+    box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-me .about-section .about-img img {
+    width: 70%;
+    height: 35vh;
+    position: relative;
+    left: 14%;
+    margin-top: 3rem;
+    top: 15%;
+    box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-section .about-text .box h4 {
+    font-size: 14px;
+  }
+  .about-section .about-text .box h2 {
+    font-size: 22px;
+  }
+  .about-section .about-text .box button {
+    margin-top: 1rem;
+  }
+  .about-section .about-text {
+    position: relative;
+    left: 18%;
+    text-align: center;
+    font-size: 10px;
+  }
+}
+/*end of About me section*/
+
+/*expertise section*/
+.expertise {
+  width: 100%;
+  height: 65vh;
+  margin-top: 5em;
+}
+.expertise .headline h1 {
+  font-size: 37px;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.expertise .headline h3 {
+  font-size: 18px;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.expertise .card-section .card {
+  border: none;
+  margin: 4rem 3rem 3rem 3rem;
+  text-align: center;
+}
+.expertise .card-section .card .exp-img {
+  height: 10vh;
+  width: 20%;
+  margin: 0 auto;
+}
+
+.expertise .card-section .card h2 {
+  font-size: 22px;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  margin-top: 1rem;
+  font-style: normal;
+}
+.expertise .card-section .card p {
+  font-size: 14px;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/*mediq query for mini tab*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .expertise {
+    width: 100%;
+    height: 70vh;
+    margin-top: 5em;
+  }
+  .expertise .card-section .card .exp-img {
+    height: 10vh;
+    width: 48%;
+    margin: 0 auto;
+  }
+  .expertise .card-section {
+    position: relative;
+    right: 5%;
+  }
+  .expertise .card-section .card {
+    border: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .expertise .card-section .card h2 {
+    text-align: center;
+  }
+  .expertise .card-section .card p {
+    text-align: center;
+    width: 80%;
+    font-size: 1rem;
+    position: relative;
+    left: 10%;
+  }
+}
+
+@media (max-width: 767px) {
+  .expertise {
+    width: 100%;
+    height: 70vh;
+    margin-top: 5em;
+  }
+  .expertise .headline h1 {
+    font-size: 22px;
+  }
+  .expertise .headline h3 {
+    font-size: 12px;
+    width: 50%;
+  }
+  .expertise .card-section .card .exp-imgv2 {
+    width: 22%;
+  }
+  .expertise .card-section .card {
+    border: none;
+    width: 100%;
+    margin: 70px auto;
+    text-align: center;
+  }
+
+  .expertise .card-section .cardv2 {
+    width: 100%;
+  }
+
+  .expertise .card-section .card h2 {
+    text-align: center;
+    font-size: 15px;
+  }
+  .expertise .card-section .card p {
+    font-size: 10px;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+/*mediq query for mini tab*/
+
+/*end expertsie*/
+
+/* start clients*/
+
+.clients {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  height: 36vh;
+  background-color: #dddddd;
+  margin-top: 13rem;
+}
+
+.clients .scroller {
+  display: flex;
+  align-items: center;
+  height: 30vh;
+  animation: scroll 20s linear infinite;
+}
+
+.clients .scroll {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  width: 10%;
+  height: auto;
+  margin-top: 48px;
+  margin-left: 11rem;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* start clients*/
+
+  .clients {
+    height: 25%;
+    position: relative;
+    top: -30%;
+  }
+
+  .clients .scroller {
+    position: relative;
+    top: -48%;
+  }
+
+  .clients .scroll {
+    margin: 80px auto;
+    width: 15%;
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .clients {
+    height: 25%;
+    position: relative;
+    top: -30%;
+  }
+
+  .clients .scroller {
+    position: relative;
+    top: -48%;
+  }
+
+  .clients .scroll {
+    margin: 80px auto;
+    width: 15%;
+    padding-top: 3rem;
+  }
+}
+
+/* start clients*/
+/*start portfolio*/
+
+.portfolio {
+  width: 100%;
+  height: 90vh;
+  margin-top: 5rem;
+  margin-left: -1.7rem;
+}
+
+.portfolio .portfolio-header ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-left: -5rem;
+}
+.portfolio {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.headline h1 {
+  margin-top: 0; /* Remove negative margin */
+}
+
+.hero {
+  margin-bottom: 50px; /* Add some margin to the hero section */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.portfolio .portfolio-header ul li {
+  margin-left: 5rem;
+  position: relative; /* Ensure the li is positioned relative */
+  font-size: 14px;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+.portfolio .portfolio-header ul li:hover {
+  color: #fb8500;
+}
+.portfolio .portfolio-header ul li:hover::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1.5px;
+  background-color: black;
+  transform-origin: left;
+  transition: 5s linear; /* Adjusted to 5 seconds */
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.portfolio .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -1rem;
+}
+
+.portfolio .profile .cards {
+  position: relative;
+  margin-top: 4rem;
+  width: 340px;
+  margin-left: 3rem;
+  height: 350px;
+  border: black solid 1px;
+  border-radius: 9px;
+}
+.portfolio .profile .cards {
+  /* Default styling for .cards */
+  transition: transform 0.5s ease-in-out; /* Adjust the duration and timing function as needed */
+}
+
+.portfolio .profile .cards:hover::after {
+  content: "";
+  display: block;
+  width: 340px;
+  height: 350px;
+  transform-origin: left;
+  background-color: black;
+  border-radius: 9px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 5s linear; /* Adjusted to 5 seconds */
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .portfolio {
+    margin-top: -10rem;
+    margin-left: 1.2rem;
+  }
+  .skill::after {
+    display: block;
+    content: "";
+    width: 25%;
+    height: 0.2vh;
+    background-color: black;
+  }
+  .portfolio .portfolio-header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap into rows */
+    margin: 10px auto;
+    right: 1.3rem;
+    padding: 0; /* Remove padding to prevent overflow */
+    width: 100%; /* Make it responsive to the screen width */
+  }
+  .portfolio .portfolio-header ul li:hover {
+    background-color: #fb8500;
+    color: black;
+    transition: 1.5s linear ease;
+  }
+
+  /* For the list items */
+  .portfolio .portfolio-header ul li {
+    width: 30%; /* Three items per row */
+    margin: 5% auto; /* Ensure even spacing */
+    font-size: 12px;
+    background-color: #404040;
+    color: white;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  }
+
+  .portfolio .profile {
+    width: 100%;
+  }
+  .portfolio .profile .cards {
+    position: relative;
+    margin-top: 4rem;
+    width: 80%;
+    display: flex;
+    gap: 20px;
+    right: 3.5%;
+    height: 350px;
+    border: black solid 1px;
+    border-radius: 9px;
+  }
+}
+@media (max-width: 767px) {
+  .skill {
+    max-width: 0 auto;
+    margin-right: 2rem;
+  }
+
+  .skill::after {
+    display: block;
+    content: "";
+    width: 25%;
+    height: 0.2vh;
+    background-color: black;
+  }
+  .portfolio {
+    margin-top: -7rem;
+    margin-left: 1.2rem;
+  }
+  .portfolio .portfolio-header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap into two rows */
+    margin: 10px auto;
+    padding: 0; /* Remove padding to prevent overflow */
+    width: 100%; /* Make it responsive to the screen width */
+  }
+
+  /* For the list items */
+  .portfolio .portfolio-header ul li {
+    width: 30%; /* Three items per row */
+    margin: 5% auto; /* Ensure even spacing */
+    font-size: 12px;
+    background-color: #404040;
+    color: white;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  }
+  .portfolio .portfolio-header ul li:hover {
+    background-color: #fb8500;
+    color: black;
+    transition: 1.5s linear ease;
+  }
+
+  .portfolio .profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .portfolio .profile .cards {
+    margin: 8px auto;
+    position: relative;
+    right: 0.3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .portfolio .portfolio-header ul {
+    width: 100%; /* Take full width on mobile */
+    padding: 0; /* Remove excess padding */
+    right: 18px; /* Remove any right offset for better alignment */
+  }
+
+  .portfolio .portfolio-header ul li {
+    width: 45%; /* Adjust to fit two items per row on small screens */
+    margin: 2% auto; /* Add appropriate spacing */
+  }
+}
+/*end portfolio*/
+
+/*start of footer*/
+
+.footer {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  margin-top: 7.5rem;
+  margin-left: 1.7em;
+}
+
+.footer .section1 {
+  width: 30%;
+  position: relative;
+  top: 35%;
+  height: 20vh;
+  left: 8%;
+}
+.footer .section1 h2 {
+  color: white;
+  font-size: 18px;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.footer .section1 p {
+  color: grey;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.footer .section2 {
+  width: 30%;
+  position: relative;
+  top: 35%;
+  height: 20vh;
+  left: 10%;
+}
+
+.footer .section2 h2 {
+  color: white;
+  font-size: 18px;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.footer .section2 p {
+  color: grey;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.footer .section3 {
+  width: 30%;
+  position: relative;
+  top: 35%;
+  height: 20vh;
+  left: 9%;
+}
+
+.footer .section3 p {
+  color: white;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.footer .section3 h4 {
+  font-size: 18px;
+  color: grey;
+  font-weight: 200;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .footer {
+    width: 100%;
+    height: 28vh;
+    margin-left: -1.2rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    margin-top: 7.5rem;
+  }
+
+  .footer .section1 {
+    width: 30%;
+    position: relative;
+    top: 25%;
+    height: 20vh;
+    left: 2%;
+  }
+
+  .footer .section1 h2 {
+    font-size: 1.8rem;
+  }
+  .footer .section1 p {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .footer .section2 h2 {
+    font-size: 1.8rem;
+  }
+  .footer .section2 p {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .footer .section2 {
+    width: 30%;
+    position: relative;
+    top: 25%;
+    height: 20vh;
+    left: 2%;
+  }
+  .footer .section3 {
+    width: 30%;
+    position: relative;
+    top: 25%;
+    height: 20vh;
+    left: 8%;
+  }
+
+  .footer .section3 h4 {
+    font-size: 1.4rem;
+  }
+  .footer .section3 p {
+    font-size: 1.8rem;
+    color: white;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    width: 100%;
+    height: 28vh;
+    margin-left: -1.2rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    margin-top: 7.5rem;
+  }
+
+  .footer .section1 {
+    width: 30%;
+    position: relative;
+    top: 25%;
+    height: 20vh;
+    left: 2%;
+  }
+
+  .footer .section1 h2 {
+    font-size: 0.8rem;
+  }
+  .footer .section1 p {
+    font-size: 0.5rem;
+  }
+
+  .footer .section2 h2 {
+    font-size: 0.8rem;
+  }
+  .footer .section2 p {
+    font-size: 0.5rem;
+  }
+
+  .footer .section2 {
+    width: 30%;
+    position: relative;
+    top: 25%;
+    height: 20vh;
+    left: 2%;
+  }
+  .footer .section3 {
+    width: 30%;
+    position: relative;
+    top: 25%;
+    height: 20vh;
+    left: 8%;
+  }
+
+  .footer .section3 h4 {
+    font-size: 0.6rem;
+  }
+  .footer .section3 p {
+    font-size: 0.8rem;
+  }
+}
+/*end of footer*/

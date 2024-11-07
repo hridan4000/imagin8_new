@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://img.freepik.com/free-photo/vibrant-colors-flow-abstract-wave-pattern-generated-by-ai_188544-9781.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1727654400&semt=ais_hybrid");
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+/* Adding the black overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust opacity for a transparent black layer */
+  z-index: -1;
+}
+
+/* Card container */
+.card-container {
+  perspective: 1000px; /* Adds perspective for the 3D effect */
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  border: 2px solid orange;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1); /* Smooth transition */
+}
+
+.card:hover {
+  transform: rotateY(180deg); /* Rotate the card on hover */
+}
+
+/* Front of the card */
+.card-front img {
+  width: 30%;
+  height: 15vh;
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back side when facing front */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.card-front {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.card-back {
+  background-color: white;
+  transform: rotateY(180deg); /* Initially flip the back side */
+  text-align: center;
+}
+
+.card-back h5 {
+  font-weight: bold;
+}
+
+.card-back p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .card-front img {
+    width: 30%;
+    height: 12vh;
+  }
+}

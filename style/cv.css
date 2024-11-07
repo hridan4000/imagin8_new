@@ -1,0 +1,47 @@
+/* css/cv.css */
+
+/* Body Styling */
+body {
+  background-color: #f8f9fa;
+  font-family: "Roboto Slab", serif;
+}
+
+/* Card Styling */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Download Button Styling */
+.download-btn {
+  margin-top: 15px;
+}
+
+.download-btn i {
+  margin-right: 5px;
+}
+
+/* Footer Styling */
+footer a {
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffc107; /* Bootstrap's warning color (orange) */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+}

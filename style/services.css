@@ -1,0 +1,85 @@
+body {
+  background-color: #1c1e29;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+h2.header-text {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-custom {
+  background-color: #22232a;
+  border: 2px solid #fff; /* White border */
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow: visible; /* Allow the diamond to overflow */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.card-custom:hover {
+  background-color: white;
+  color: black;
+}
+.card-custom .diamond {
+  width: 60px;
+  height: 60px;
+  background-color: orange;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg); /* Rotate to make it diamond-shaped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Ensure it's on top */
+}
+
+.diamond i {
+  color: #fff;
+  font-size: 24px;
+  transform: rotate(-45deg); /* Rotate back the icon */
+}
+
+.card-body {
+  margin-top: 50px; /* Adjust margin to give more space below the diamond */
+  padding: 0 10px;
+}
+
+p.card-text {
+  color: #cfcfcf;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+p.card-text:hover {
+  cursor: pointer;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  h2.header-text {
+    font-size: 1.5rem;
+  }
+
+  .diamond {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+
+  .diamond i {
+    font-size: 20px;
+  }
+
+  .card-body {
+    margin-top: 40px; /* Adjust margin for smaller screens */
+  }
+
+  p.card-text {
+    font-size: 0.9rem;
+  }
+}
